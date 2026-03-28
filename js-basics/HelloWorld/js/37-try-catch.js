@@ -6,7 +6,7 @@ window.addEventListener('load', () => {
     {
         var year = 2019;
         alert(year);
-        console.log(decodeURIComponent("https://dakg%messtudio.taplink.site/"));
+        console.log(decodeURIComponent("https://dakgamesstudio.taplink.site/"));
     }
     catch(error)
     {
