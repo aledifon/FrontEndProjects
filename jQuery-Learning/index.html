@@ -3,10 +3,51 @@
     <head>
         <meta charset="utf-8">
         <title>jQuery Learning</title>
-        <script type="text/javascript" src=""></script>
+        <!-- <script
+            src="https://code.jquery.com/jquery-4.0.0.min.js"
+            integrity="sha256-OaVG6prZf4v69dPg6PhVattBXkcOWQB62pdZ3ORyrao="
+            crossorigin="anonymous">
+        </script> -->
+        <script type="text/javascript" src="js/jquery-4.0.0.min.js"></script>
+        <script type="text/javascript" src="js/01-selectors.js"></script>
+        <style>
+            .zebra{
+                border: 5px dashed black;
+            }
+
+            .big{
+                font-size: 30px;
+            }
+
+            .upper-margin{
+                display: block;
+                margin-top: 45px;                
+            }
+
+            .highlighted{
+                border-bottom: 2px solid green;
+            }
+        </style>
     </head>
     <body>
-        <h1>Learning jQuery Course</h1>
-        <p>jQuery exercices</p>
+        <h1>Learning jQuery Course</h1>     
+        <ul>
+            <li><a href="https://www.google.com" title="Google">Go to Google</a></li>
+            <li><a href="https://www.facebook.com" title="Facebook">Go to Facebook</a></li>                        
+        </ul>  
+        <p id="red" class="zebra">jQuery exercices</p>
+        <p id="yellow" class="no_border">practicing with Selectors</p>
+        <p id="green" class="no_border">I want to be a green paragraph</p>
+        <p class="zebra">I'm a white paragraph</p>
+
+        <div id="box">
+            <p>Hi I'm a box</p>
+            <ul>
+                <li>Element 1</li>
+                <!-- <li class="highlighted">Element 2</li> -->
+                <li id="element2">Element 2</li>
+            </ul>
+            <span class="highlighted">I'm a span</span>
+        </div>
     </body>
 </html>

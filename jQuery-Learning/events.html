@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <title>jQuery Learning</title>           
+        <script type="text/javascript" src="js/jquery-4.0.0.min.js"></script>
+        <script type="text/javascript" src="js/02-events.js"></script>        
+        <style>
+            /* This applies this specific style to any HTML elem with the 'box' id */
+            #box{
+                width: 250px;
+                height: 250px;
+                border: 2px solid black;
+                background: yellow;
+                transition: 300ms all;
+            }
+            
+            /* #box:hover{                
+                background: red;
+                cursor: pointer;
+            }             */
+
+            /* This applies this specific style to any HTML elem with the label 'input' */
+            input{
+                padding: 10px;
+                width: 300px;
+                font-size: 20px;
+            }
+
+            #data{
+                border: 4px dashed black;
+                padding: 10px;
+                width: 250px;
+                height: 50px;
+                margin-top: 10px;
+                display: none;
+            }
+
+            #followMe{
+                width: 25px;
+                height: 25px;
+                position: absolute;
+                display: block;
+                background: yellow;
+                opacity: 0.5;
+                border: 3px solid black;
+                border-radius: 999px;
+            }
+        </style>
+    </head>
+    <body>
+        <h1>Learning jQuery Course - Events</h1>             
+        
+        <div id="followMe"></div>
+
+        <form>
+            <input type="text" id="name"/>
+        </form>
+        <div id="data">
+
+        </div>
+        <br>
+        <div id="box">
+            I'm a box
+        </div>
+    </body>
+</html>
