@@ -1,0 +1,79 @@
+ <!DOCTYPE html>
+ <html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <title>DOM, Events and functions Exercise</title>
+        <script type="text/Javascript" src="js/32-DOM-Exercise.js"></script>
+        <style>
+            .box{
+                width: 200px;
+                height: 250px;
+                float: left;
+                margin: 20px;
+            }
+            .dashed{
+                border: 3px dashed black;   
+                padding: 5px;                             
+            }
+        </style>
+    </head>
+    <body>
+        <!-- 1. Form with fields Name, Last names and age
+            2. Send button for the form: submit events
+            3. Show data on the console
+            4. Form validation
+         -->
+        <h1> DOM, Events and functions Exercise - JS course</h1>     
+        <div class="box">
+            <form action = "" method = "POST" id = "form" onsubmit="return false;">            
+                <label for="clientTable" style="font-size: 24px;"><strong>Client Form</strong></label>
+                <br>
+                <!-- <table id="clientTable">
+                    <tr>
+                        <th align="left">Name</th>
+                        <th align="left">Last Names</th>
+                        <th align="left">Age</th>
+                    </tr>
+                    <tr>
+                        <td>
+                            <input type="text" name="nameText" id="nameText">
+                        </td>
+                        <td>
+                            <input type="text" name="lastNamesText" id="lastNamesText">
+                        </td>
+                        <td>
+                            <input type="text" name="ageText" id="ageText">
+                        </td>                    
+                    </tr> 
+                </table> -->
+
+                <label for="nameText">Name</label>  </br>
+                <input type="text" name="nameText" id="nameText"> </br>
+
+                <label for="lastNamesText">Last Names</label> </br>     
+                <input type="text" name="lastNamesText" id="lastNamesText"> </br>
+
+                <label for="ageText">Age</label> </br>  
+                <input type="text" name="ageText" id="ageText"> </br></br>
+                
+                <input type="submit" value="Send Form" id="submitButton"/>
+
+            </form>
+            <br>
+            <button id="showButton">Show Client Data</button>
+        </div>   
+        <div class="box dashed">            
+            <h3 align ="center">Client information</h3>
+            <hr>
+            <p id="p_name">
+                Name: <span></span>
+            </p>
+            <p id="p_lastNames">
+                Last names: <span></span>
+            </p>
+            <p id="p_age">
+                Age: <span></span>
+            </p>
+        </div>                
+    </body>
+ </html>
