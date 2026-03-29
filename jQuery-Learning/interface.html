@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <title>jQuery Learning</title>           
+        <script type="text/javascript" src="js/jquery-4.0.0.min.js"></script>
+
+        <!--CSS Styles from the jQuery UI files-->
+        <link rel="stylesheet" href="js/jquery-ui-1.14.2/jquery-ui.min.css"/>
+        <link rel="stylesheet" href="js/jquery-ui-1.14.2/jquery-ui.structure.min.css"/>
+        <link rel="stylesheet" href="js/jquery-ui-1.14.2/jquery-ui.theme.min.css"/>
+
+        <script type="text/javascript" src="js/jquery-ui-1.14.2/jquery-ui.min.js"></script>
+        <script type="text/javascript" src="js/06-interfaces.js"></script>   
+        <style>
+            .element{
+                width: 300px;
+                height: 200px;
+                border: 4px solid black;
+                background: lightblue;
+                margin: 20px;
+                float: left;
+            }
+
+            /*Style applied to all the li elements which belong 
+            to an element of the 'selectableList' class*/
+            .selectableList li{
+                width: 80%;
+                padding: 20px;
+                border: 1px solid #ccc;      
+                list-style: none;          
+                cursor: pointer;
+            }
+
+            ul .ui-selecting {background: green;}
+            ul .ui-selected {background: blue;}
+
+            #elementMoved{
+                width: 100px;
+                height: 100px;
+                border: 4px solid red;
+            }
+
+            #area{
+                width: 300px;
+                height: 300px;
+                border: 4px solid green;
+            }
+
+            .element{                
+                background: pink;                
+                float: none;
+                display: none;
+            }
+
+        </style>                             
+    </head>
+    <body>
+        <h1>Learning jQuery Course - jQuery UI</h1>         
+        
+        
+        <hr/>
+        <h3>Tooltip</h3>
+
+        <a href="#" title="Access to the section of my data from this web">My data</a>
+        <a href="#" title="Logging from this web">Logging</a>
+        <a href="#" title="See all my friends">Friends</a>
+
+        <hr/>
+
+        <h3>Dialog Boxes</h3>       
+        <button id="launch-Popup">Launch me!</button>
+        <div id="popup" title="Are you sure?" style="display:none;">
+            <p>
+                If you continue in the course you will learn a lot
+            </p>
+        </div>
+
+        <hr/>
+
+        <h3>Calendar</h3>       
+        <input type="text" id="calendar">
+
+        <hr/>
+
+        <h3>Tabs</h3>       
+        <div id="tabs">
+            <ul>
+                <li><a href="#tabs-1">Tab 1</a></li>
+                <li><a href="#tabs-2">Tab 2</a></li>
+                <li><a href="#tabs-3">Tab 3</a></li>
+            </ul>
+            <div id="tabs-1">
+                "Hi I'm the 1st tab"
+            </div>
+            <div id="tabs-2">
+                "Hi I'm the 2nd tab"
+            </div>
+            <div id="tabs-3">
+                "Hi I'm the 3rd tab"
+            </div>
+        </div>
+
+        <hr/>
+
+        <button id="show">Show</button>
+        <div class="box-effects element">            
+        </div>
+
+        <div id="elementMoved"></div>
+        <br>
+        <div id="area"></div>
+
+        <ul class="selectableList">
+            <li>GTA 5</li>
+            <li>Need for speed</li>
+            <li>Crash Bandicoot</li>
+            <li>Super Mario</li>
+            <li>Galaxian</li>
+        </ul>
+
+        <div class="element">
+            Hi I'm an alement from the web 1
+        </div>
+        <div class="element">
+            Hi I'm an alement from the web 2
+        </div>
+        <div class="element">
+            Hi I'm an alement from the web 3
+        </div>
+
+    </body>
+</html>
