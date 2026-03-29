@@ -12,12 +12,20 @@
                 border: 2px solid green;
                 background: beige;
                 transition: 300ms all;
+                overflow: scroll;
             }
         </style>
     </head>
     <body>
-        <h1>Learning jQuery Course - Ajax</h1>                     
-               
+        <h1>Learning jQuery Course - AJAX</h1>                     
+        
+        <p>
+            <form action="https://jsonplaceholder.typicode.com/posts" method="POST" id="form">
+                Name: <input type="text" name="name"/>
+                Web: <input type="text" name="web">
+                <input type="submit" value="Register">
+            </form>
+        </p>
         <div id="data"></div>
     </body>
 </html>
