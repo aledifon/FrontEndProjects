@@ -5,81 +5,82 @@
         <title>JS Project</title>           
         <script type="text/javascript" src="js/jquery-4.0.0.min.js"></script>
 
-        <!--CSS Styles from the jQuery UI files-->
-        <link rel="stylesheet" href="js/jquery-ui-1.14.2/jquery-ui.min.css"/>
+        <!--CSS Styles-->
+        <link rel="stylesheet" type="text/css" href="css/styles.css"/>
+
+        <!-- <link rel="stylesheet" href="js/jquery-ui-1.14.2/jquery-ui.min.css"/>
         <link rel="stylesheet" href="js/jquery-ui-1.14.2/jquery-ui.structure.min.css"/>
         <link rel="stylesheet" href="js/jquery-ui-1.14.2/jquery-ui.theme.min.css"/>
 
-        <script type="text/javascript" src="js/jquery-ui-1.14.2/jquery-ui.min.js"></script>
+        <script type="text/javascript" src="js/jquery-ui-1.14.2/jquery-ui.min.js"></script> -->
         <script type="text/javascript" src="js/main.js"></script>           
-        <style>
-            body {
-                margin: 0;
-                padding: 0;
-            }
-            .header{
-                display: flex;
-                justify-content: space-between;
-                align-items: center;
-                padding: 20px;
-            }
-            .h1{
-                background: rgb(45, 112, 45);
-                height: 80px;
-                width: 500px;
-                color: white;
-                font-family: Arial, Helvetica, sans-serif;
-                font-size: 50px;
-                padding: 10px;             
-            }
-            .header input{
-                height: 60px;
-                width: 300px;
-                font-size: 18px;
-                background: rgb(241, 239, 239);
-            }
-            .menuContainer{
-                padding: 0 20px; /* espacio a izquierda y derecha igual que header/banner */
-            }
-            .ul{
-                display: flex;
-                align-items: center;
-                /* justify-content: flex-start; */
-                list-style: none;                   
-                margin: 0;
-                gap: 20px;    
-                background: rgb(79, 78, 78);     
-                color: white;       
-                font-family: Arial, Helvetica, sans-serif;
-                padding:  10px 20px;             
-            }
-            .ul a{
-                color: inherit;       /* hereda el color del li o del contenedor */
-                text-decoration: none; /* quita el subrayado */
-            }
-            .banner-container{
-                width: 100%;        /* ocupa todo el ancho de la web */
-                height: 300px;      /* alto fijo */
-                overflow: hidden;   /* recorta cualquier parte de la imagen que sobresalga */
-                margin: 30px 0;
-            }
-            .banner{
-                width: calc(100% - 5px);      /* 20px de separación a cada lado */
-                height: 100%;       /* imagen ocupa todo el alto del contenedor */
-                object-fit: cover;  /* rellena el contenedor sin deformarse */
-                display: block;     /* elimina espacio debajo de la imagen */                           
-            }
-            td {
-                vertical-align: top;  /* alinea todo el contenido al top de la celda */
-            }
-        </style>
     </head>
-    <body>
-        <div class="header">
-            <h1 class="h1">PRACTICANDO JS</h1>         
+    <body>        
+        <section id="global">
+
+            <!-- Header -->
+            <header>
+                <div id="logo">
+                   <h1>JS Project</h1>
+                </div>
+
+                <!-- To clean floats and avoid superpossing -->
+                <div class="clearfix"></div>
+
+                <navbar>
+                    <ul id="menu">
+                        <li><a href="#Home">Home</a></li>
+                        <li><a href="#Calculator">Calculator</a></li>
+                        <li><a href="#Clock">Clock</a></li>
+                        <li><a href="#Dirty game">Dirty Game</a></li>
+                        <li><a href="#Contact">Contact</a></li>
+                    </ul>
+                </navbar>                
+            </header>       
+
+            <!-- Slider -->
+            <div id="slider">
+                <img src="img/rojo.jpg" alt="Banner" class="banner"/>
+            </div>   
+
+            <!-- Content -->
+            <section id="content">
+                <div id="posts">
+                    <article class="post">
+                        <h2>Article title</h1>    
+                        <span>Publication date</span>                    
+                        <p>
+                            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer 
+                            porttitor ullamcorper convallis. Sed volutpat in turpis eu feugiat. 
+                            Vestibulum enim tellus, placerat ut ex vitae, luctus sollicitudin ex. 
+                            Nam hendrerit dui sed erat maximus imperdiet. Vestibulum quis gravida 
+                            lacus. Orci varius natoque penatibus et magnis dis parturient montes, 
+                            nascetur ridiculus mus. Sed eu massa turpis. Mauris ultrices ex ut 
+                            justo porta auctor. Nulla mollis ultrices aliquam. Donec consectetur 
+                            malesuada risus. Quisque eget elit erat. Proin pellentesque tellus 
+                            urna, vel pulvinar justo posuere eget. Fusce aliquam, nibh ac maximus 
+                            tempus, enim purus porta orci, sit amet condimentum dui nibh a quam. 
+                            Donec eget eros scelerisque nibh facilisis lobortis. Nulla placerat 
+                            luctus est, non porttitor urna porta et.
+                        </p>
+                    </article>
+                    
+                </div>
+                <sidebar id="sidebar">
+
+                </sidebar>
+             </section>
+
+        </section>
+
+        <footer>
+            JS Master of Alejandro Diaz &copy;
+        </footer>
+
+        <!-- <div class="header">
+            <header class="h1">PRACTICANDO JS</header>         
             <form action="">
-                <input type="text" placeholder=" What would you like to search?">
-                <!-- <button type="submit"></button> -->
+                <input type="text" placeholder=" What would you like to search?">                
             </form>
         </div>
         
@@ -127,7 +128,7 @@
                     </p>
                 </td>
             </table>
-        </div>
+        </div> -->
        
     </body>
 </html>
