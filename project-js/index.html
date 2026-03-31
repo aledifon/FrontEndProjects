@@ -47,8 +47,8 @@
             <section id="content">
                 <div id="posts">
                     <article class="post">
-                        <h2>Article title</h1>    
-                        <span>Publication date</span>                    
+                        <h2>Article title</h2>    
+                        <span class="date">Publication date</span>                    
                         <p>
                             Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer 
                             porttitor ullamcorper convallis. Sed volutpat in turpis eu feugiat. 
@@ -63,72 +63,66 @@
                             Donec eget eros scelerisque nibh facilisis lobortis. Nulla placerat 
                             luctus est, non porttitor urna porta et.
                         </p>
+                        <a href="#" class="buttonMore">Read more</a>
+                    </article>
+                    <article class="post">
+                        <h2>Article title</h2>    
+                        <span class="date">Publication date</span>                    
+                        <p>
+                            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer 
+                            porttitor ullamcorper convallis. Sed volutpat in turpis eu feugiat. 
+                            Vestibulum enim tellus, placerat ut ex vitae, luctus sollicitudin ex. 
+                            Nam hendrerit dui sed erat maximus imperdiet. Vestibulum quis gravida 
+                            lacus. Orci varius natoque penatibus et magnis dis parturient montes, 
+                            nascetur ridiculus mus. Sed eu massa turpis. Mauris ultrices ex ut 
+                            justo porta auctor. Nulla mollis ultrices aliquam. Donec consectetur 
+                            malesuada risus. Quisque eget elit erat. Proin pellentesque tellus 
+                            urna, vel pulvinar justo posuere eget. Fusce aliquam, nibh ac maximus 
+                            tempus, enim purus porta orci, sit amet condimentum dui nibh a quam. 
+                            Donec eget eros scelerisque nibh facilisis lobortis. Nulla placerat 
+                            luctus est, non porttitor urna porta et.
+                        </p>
+                        <a href="#" class="buttonMore">Read more</a>
                     </article>
                     
                 </div>
-                <sidebar id="sidebar">
+               
+                <aside id="sidebar">
+                    <div id="about">
+                        <h4><span>Who am I?</span></h4>
+                        <img src="img/caracol.jpg" alt="About me" class="aboutMe" width="200px" height="150px">
+                        <p>
+                            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer 
+                            porttitor ullamcorper convallis
+                        </p>
+                    </div>
 
-                </sidebar>
+                    <div id="login">
+                        <h4>Log in</h4>
+                        <form action="">
+                            <label for="name">Name</label>
+                            <input type="text" name="name"/>
+
+                            <label for="email">E-mail</label>
+                            <input type="email" name="email"/>
+
+                            <label for="password">Password</label>
+                            <input type="password" name="password"/>
+
+                            <input type="submit" value="Log-in">
+                        </form>
+                    </div>
+                </aside>
+
+                <!-- To clean floats and avoid superpossing -->
+                <div class="clearfix"></div>
              </section>
 
         </section>
 
         <footer>
             JS Master of Alejandro Diaz &copy;
-        </footer>
+        </footer>       
 
-        <!-- <div class="header">
-            <header class="h1">PRACTICANDO JS</header>         
-            <form action="">
-                <input type="text" placeholder=" What would you like to search?">                
-            </form>
-        </div>
-        
-        <div class="menuContainer">
-            <ul class="ul">
-                <li><a href="#Home">HOME</a></li>
-                <li><a href="#Calculator">CALCULATOR</a></li>
-                <li><a href="#Clock">CLOCK</a></li>
-                <li><a href="#Dirty game">DIRTY GAME</a></li>
-                <li><a href="#Contact">CONTACT</a></li>
-            </ul>
-        <div>
-
-        <div class="banner-container">
-            <img src="img/rojo.jpg" alt="Banner" class="banner"/>
-        </div>        
-
-        <div>
-            <table>
-                <td>                    
-                    <h2><strong>Lorem ipsum</strong></h2>
-                    <label for="">Published on Monday 30th March 2026</label>            
-                    <button name="Comments">92 Comments</button>                    
-                    <p>
-                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer 
-                        porttitor ullamcorper convallis. Sed volutpat in turpis eu feugiat. 
-                        Vestibulum enim tellus, placerat ut ex vitae, luctus sollicitudin ex. 
-                        Nam hendrerit dui sed erat maximus imperdiet. Vestibulum quis gravida 
-                        lacus. Orci varius natoque penatibus et magnis dis parturient montes, 
-                        nascetur ridiculus mus. Sed eu massa turpis. Mauris ultrices ex ut 
-                        justo porta auctor. Nulla mollis ultrices aliquam. Donec consectetur 
-                        malesuada risus. Quisque eget elit erat. Proin pellentesque tellus 
-                        urna, vel pulvinar justo posuere eget. Fusce aliquam, nibh ac maximus 
-                        tempus, enim purus porta orci, sit amet condimentum dui nibh a quam. 
-                        Donec eget eros scelerisque nibh facilisis lobortis. Nulla placerat 
-                        luctus est, non porttitor urna porta et.
-                    </p>
-                </td>
-                <td>
-                    <label for="">Who am I?</label>
-                    <img src="img/caracol.jpg" alt="About me" width="300px" height="250px">
-                    <p>
-                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer 
-                        porttitor ullamcorper convallis
-                    </p>
-                </td>
-            </table>
-        </div> -->
-       
     </body>
 </html>
