@@ -2,17 +2,19 @@
 <html lang="en">
     <head>
         <meta charset="utf-8">
-        <title>JS Project</title>           
-        <script type="text/javascript" src="js/jquery-4.0.0.min.js"></script>
+        <title>JS Project</title>                   
 
-        <!--CSS Styles-->
+        <!-- CSS Styles -->
         <link rel="stylesheet" type="text/css" href="css/styles.css"/>
 
-        <!-- <link rel="stylesheet" href="js/jquery-ui-1.14.2/jquery-ui.min.css"/>
-        <link rel="stylesheet" href="js/jquery-ui-1.14.2/jquery-ui.structure.min.css"/>
-        <link rel="stylesheet" href="js/jquery-ui-1.14.2/jquery-ui.theme.min.css"/>
+        <!-- jQuery -->
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
 
-        <script type="text/javascript" src="js/jquery-ui-1.14.2/jquery-ui.min.js"></script> -->
+        <!-- Slider -->
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bxslider@4.2.17/dist/jquery.bxslider.min.css">        
+        <script src="https://cdn.jsdelivr.net/npm/bxslider@4.2.17/dist/jquery.bxslider.min.js"></script>
+        
+        <!-- My scripts-->
         <script type="text/javascript" src="js/main.js"></script>           
     </head>
     <body>        
@@ -39,9 +41,12 @@
             </header>       
 
             <!-- Slider -->
-            <div id="slider">
-                <img src="img/rojo.jpg" alt="Banner" class="banner"/>
-            </div>   
+            <div class="bxslider">
+                <!-- <img src="img/hojas.jpg" title="Leafs" class="banner"/> -->
+                <div><img src="img/hojas.jpg" title="Leafs"/></div>
+                <div><img src="img/rojo.jpg" title="Red" /></div>
+                <div><img src="img/cielo.jpg" title="Sky" /></div>
+            </div>              
 
             <!-- Content -->
             <section id="content">
