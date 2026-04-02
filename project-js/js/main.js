@@ -100,6 +100,23 @@ $(document).ready(() => {
     // Go-up
     var goUpLink = $('.goUp');
 
+    // User data
+    var loginDiv = $('#login');
+    var loginForm = $('#login form');
+    
+    var nameForm = loginForm.find('[type="text"]');
+    var userName;
+
+    var emailForm = loginForm.find('[type="email"]');
+    var userEmail;
+
+    var passwordForm = loginForm.find('[type="password"]');
+    var userPassword;
+
+    var aboutMeText = $('#about p');
+
+    var logoutLink;
+
     // Local Storage
     var isLocalStorage = CheckLocalStorage();
 
@@ -112,6 +129,33 @@ $(document).ready(() => {
     if(themeRef && themeRef != "")
         SetTheme(themeLink, themeRef);    
     
+    // Load the user data if exists on the local Storage
+    var userName = localStorage.getItem("userName");
+    var userEmail = localStorage.getItem("userEmail");
+    var userPassword = localStorage.getItem("userPassword");
+
+    if((userName && (userName != "") && (userName != "undefined")) && 
+        (userEmail && (userEmail != "") && (userEmail != "undefined")) && 
+        (userPassword && (userPassword != "") && (userPassword != "undefined"))){
+
+        let text = `<br><strong>Welcome ${userName}!</strong><br>` +
+                    `Email: ${userEmail} <br>`;
+
+        console.log(text);
+        aboutMeText.html(text);
+
+        loginDiv.hide();
+
+        // Also create a Logout button
+        aboutMeText.append(`<br><a href='#' id='logout'>Close session</a>`);
+        logoutLink = $('#logout');
+    }
+    else{
+        let text = `No user info found!`;
+        console.log(text);
+        aboutMeText.html(text);
+    }
+
     // Simulated posts
     moment.locale('en-gb');     
     posts = [
@@ -230,5 +274,44 @@ $(document).ready(() => {
 
         return false;
         });
+
+    // Fake Log-in event
+    loginForm.submit((e) => {        
+        // Get the form data
+        let name = nameForm.val();
+        let email = emailForm.val();
+        let password = passwordForm.val();
+
+        // Data validation
+
+        // Saves data on localStorage
+        localStorage.setItem('userName', name);
+        localStorage.setItem('userEmail', email);
+        localStorage.setItem('userPassword', password);
+
+        // Shows data on console
+        console.log(`The user ${name} was registered on the Local Storage`);
+        console.log(`The email ${email} was registered on the Local Storage`);
+        console.log(`The password ${password} was registered on the Local Storage`);
+        });
+
+    // Close session event
+    logoutLink.click((e) => {
+        e.preventDefault();
+
+        // Clean the user Data
+        userName = null;
+        userEmail = null;
+        userPassword = null;
+
+        localStorage.removeItem("userName");
+        localStorage.removeItem("userEmail");
+        localStorage.removeItem("userPassword");                   
+
+        // Reload the page to show again the Log-in form
+        location.reload();
+
+        return false;
+    });
 
 });
