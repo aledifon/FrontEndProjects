@@ -215,3 +215,18 @@ footer{
     padding-right: 20px;
     line-height: 47px;
 }
+
+.goUp{
+    position: fixed;
+    text-decoration: none;    
+    display: block;        
+
+    bottom: 105px;   
+    right: 16%;     
+}
+
+.goUp img{    
+    display: block;  
+    width: 40px;
+    height: auto;                                  
+}

@@ -97,6 +97,9 @@ $(document).ready(() => {
     var toRedDiv = $('#to-red');
     var toBlueDiv = $('#to-blue');
 
+    // Go-up
+    var goUpLink = $('.goUp');
+
     // Local Storage
     var isLocalStorage = CheckLocalStorage();
 
@@ -216,4 +219,16 @@ $(document).ready(() => {
         let refStyle = 'css/blue.css';
         SetTheme(themeLink, refStyle);
         });
+
+    // Scroll-up event
+    goUpLink.click((e) => {
+        e.preventDefault();     //Avoid reloading the page
+
+        $('html, body').animate({
+                scrollTop: 0                
+                },500);
+
+        return false;
+        });
+
 });
