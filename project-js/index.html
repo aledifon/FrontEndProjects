@@ -6,6 +6,7 @@
 
         <!-- CSS Styles -->
         <link rel="stylesheet" type="text/css" href="css/styles.css"/>
+        <link id="theme" rel="stylesheet" type="text/css" href="css/green.css">        
 
         <!-- jQuery -->
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
@@ -14,10 +15,24 @@
         <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bxslider@4.2.17/dist/jquery.bxslider.min.css">        
         <script src="https://cdn.jsdelivr.net/npm/bxslider@4.2.17/dist/jquery.bxslider.min.js"></script>
         
+        <!-- Moment JS -->
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.30.1/moment.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.30.1/locale/es.min.js"></script>   
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.30.1/locale/en-gb.min.js"></script>  
+
         <!-- My scripts-->
         <script type="text/javascript" src="js/main.js"></script>           
     </head>
-    <body>        
+    <body>     
+        <div id="selector-theme">
+            <div id="to-green"></div>
+            <div id="to-red"></div>
+            <div id="to-blue"></div>            
+        </div>
+
+        <!-- To clean floats and avoid superpossing -->
+        <div class="clearfix"></div>
+
         <section id="global">
 
             <!-- Header -->
@@ -51,45 +66,16 @@
             <!-- Content -->
             <section id="content">
                 <div id="posts">
-                    <article class="post">
-                        <h2>Article title</h2>    
-                        <span class="date">Publication date</span>                    
-                        <p>
-                            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer 
-                            porttitor ullamcorper convallis. Sed volutpat in turpis eu feugiat. 
-                            Vestibulum enim tellus, placerat ut ex vitae, luctus sollicitudin ex. 
-                            Nam hendrerit dui sed erat maximus imperdiet. Vestibulum quis gravida 
-                            lacus. Orci varius natoque penatibus et magnis dis parturient montes, 
-                            nascetur ridiculus mus. Sed eu massa turpis. Mauris ultrices ex ut 
-                            justo porta auctor. Nulla mollis ultrices aliquam. Donec consectetur 
-                            malesuada risus. Quisque eget elit erat. Proin pellentesque tellus 
-                            urna, vel pulvinar justo posuere eget. Fusce aliquam, nibh ac maximus 
-                            tempus, enim purus porta orci, sit amet condimentum dui nibh a quam. 
-                            Donec eget eros scelerisque nibh facilisis lobortis. Nulla placerat 
-                            luctus est, non porttitor urna porta et.
-                        </p>
+                    <!-- Option A: Load posts from a JSON file -->
+
+                    <!-- Option B: Clone the existing templante and then Load posts from a JSON file -->
+                    <!-- <article class="post template" style="display:none;">
+                        <h2></h2>    
+                        <span class="date"></span>                    
+                        <p></p>
                         <a href="#" class="buttonMore">Read more</a>
-                    </article>
-                    <article class="post">
-                        <h2>Article title</h2>    
-                        <span class="date">Publication date</span>                    
-                        <p>
-                            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer 
-                            porttitor ullamcorper convallis. Sed volutpat in turpis eu feugiat. 
-                            Vestibulum enim tellus, placerat ut ex vitae, luctus sollicitudin ex. 
-                            Nam hendrerit dui sed erat maximus imperdiet. Vestibulum quis gravida 
-                            lacus. Orci varius natoque penatibus et magnis dis parturient montes, 
-                            nascetur ridiculus mus. Sed eu massa turpis. Mauris ultrices ex ut 
-                            justo porta auctor. Nulla mollis ultrices aliquam. Donec consectetur 
-                            malesuada risus. Quisque eget elit erat. Proin pellentesque tellus 
-                            urna, vel pulvinar justo posuere eget. Fusce aliquam, nibh ac maximus 
-                            tempus, enim purus porta orci, sit amet condimentum dui nibh a quam. 
-                            Donec eget eros scelerisque nibh facilisis lobortis. Nulla placerat 
-                            luctus est, non porttitor urna porta et.
-                        </p>
-                        <a href="#" class="buttonMore">Read more</a>
-                    </article>
-                    
+                    </article> -->
+
                 </div>
                
                 <aside id="sidebar">
