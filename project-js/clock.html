@@ -10,14 +10,14 @@
 
         <!-- jQuery -->
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>                    
-        <!--CSS Styles from the jQuery UI files-->
-        <link rel="stylesheet" href="js/jquery-ui-1.14.2/jquery-ui.min.css"/>
-        <link rel="stylesheet" href="js/jquery-ui-1.14.2/jquery-ui.structure.min.css"/>
-        <link rel="stylesheet" href="js/jquery-ui-1.14.2/jquery-ui.theme.min.css"/>
-        <script type="text/javascript" src="js/jquery-ui-1.14.2/jquery-ui.min.js"></script>
+        
+        <!-- Moment JS -->
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.30.1/moment.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.30.1/locale/es.min.js"></script>   
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.30.1/locale/en-gb.min.js"></script>  
 
         <!-- My scripts-->
-        <script type="text/javascript" src="js/about.js"></script>           
+        <script type="text/javascript" src="js/clock.js"></script>           
     </head>
     <body>     
         <div id="selector-theme">
@@ -53,39 +53,8 @@
             <!-- Content -->
             <section id="content">
                 <div id="box">
-                    <!-- Load the accordion -->
-                    <h2>About me</h2>
-                    <div id="accordion">
-                        <h3>Who am I?</h3>
-                        <div>
-                            <p>
-                                Wuaurr! c'est moi!
-                            </p>
-                        </div>
-                        <h3>Our services</h3>
-                        <div>
-                            <p>
-                                <ul>
-                                    <li>Cafesito rico</li>
-                                    <li>Paginas webs</li>
-                                    <li>Surricas</li>
-                                    <li>Mucho amoll</li>                                    
-                                </ul>
-                            </p>
-                        </div>
-                        <h3>Our clients</h3>
-                        <div>
-                            <p>
-                                <ul>
-                                    <li>Baby born</li>
-                                    <li>Baby bona</li>
-                                    <li>El chovi</li>
-                                    <li>La naranja geriátrica</li>
-                                    <li>El pataones</li>
-                                </ul>
-                            </p>
-                        </div>
-                    </div>
+                    <!-- Load a clock -->
+                    <div id="clock"></div>
                 </div>
                
                 <aside id="sidebar">
