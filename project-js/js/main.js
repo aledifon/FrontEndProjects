@@ -83,13 +83,15 @@ $(document).ready(() => {
         return themeStyle;
     }
 
-    // Slider
-    $('.bxslider').bxSlider({
-        mode: 'fade',
-        captions: true,
-        slideWidth: 1200
-        });
-    
+    // Slider (Executes the block only if the current URL contains "index" (main page))
+    // if(window.location.href.indexOf('index') > -1){
+        $('.bxslider').bxSlider({
+            mode: 'fade',
+            captions: true,
+            slideWidth: 1200
+            });
+    // }
+
     // Var definition
     // Themes
     var themeLink = $('#theme');
@@ -156,99 +158,101 @@ $(document).ready(() => {
         aboutMeText.html(text);
     }
 
-    // Simulated posts
-    moment.locale('en-gb');     
-    posts = [
-        {
-            title: "Title test 1" ,       
-            date:  `Published the ` + moment().format("Do MMMM YYYY"),
-            content: `Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer 
-                        porttitor ullamcorper convallis. Sed volutpat in turpis eu feugiat. 
-                        Vestibulum enim tellus, placerat ut ex vitae, luctus sollicitudin ex. 
-                        Nam hendrerit dui sed erat maximus imperdiet. Vestibulum quis gravida 
-                        lacus. Orci varius natoque penatibus et magnis dis parturient montes, 
-                        nascetur ridiculus mus. Sed eu massa turpis. Mauris ultrices ex ut 
-                        justo porta auctor. Nulla mollis ultrices aliquam. Donec consectetur 
-                        malesuada risus. Quisque eget elit erat. Proin pellentesque tellus 
-                        urna, vel pulvinar justo posuere eget. Fusce aliquam, nibh ac maximus 
-                        tempus, enim purus porta orci, sit amet condimentum dui nibh a quam. 
-                        Donec eget eros scelerisque nibh facilisis lobortis. Nulla placerat 
-                        luctus est, non porttitor urna porta et.`       
-        },
-        {
-            title: "Title test 2" ,       
-            date: `Published the ` + moment().format("Do MMMM YYYY"),
-            content: `Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer 
-                        porttitor ullamcorper convallis. Sed volutpat in turpis eu feugiat. 
-                        Vestibulum enim tellus, placerat ut ex vitae, luctus sollicitudin ex. 
-                        Nam hendrerit dui sed erat maximus imperdiet. Vestibulum quis gravida 
-                        lacus. Orci varius natoque penatibus et magnis dis parturient montes, 
-                        nascetur ridiculus mus. Sed eu massa turpis. Mauris ultrices ex ut 
-                        justo porta auctor. Nulla mollis ultrices aliquam. Donec consectetur 
-                        malesuada risus. Quisque eget elit erat. Proin pellentesque tellus 
-                        urna, vel pulvinar justo posuere eget. Fusce aliquam, nibh ac maximus 
-                        tempus, enim purus porta orci, sit amet condimentum dui nibh a quam. 
-                        Donec eget eros scelerisque nibh facilisis lobortis. Nulla placerat 
-                        luctus est, non porttitor urna porta et.`       
-        },
-        {
-            title: "Title test 3" ,       
-            date: `Published the ` + moment().format("Do MMMM YYYY"),
-            content: `Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer 
-                        porttitor ullamcorper convallis. Sed volutpat in turpis eu feugiat. 
-                        Vestibulum enim tellus, placerat ut ex vitae, luctus sollicitudin ex. 
-                        Nam hendrerit dui sed erat maximus imperdiet. Vestibulum quis gravida 
-                        lacus. Orci varius natoque penatibus et magnis dis parturient montes, 
-                        nascetur ridiculus mus. Sed eu massa turpis. Mauris ultrices ex ut 
-                        justo porta auctor. Nulla mollis ultrices aliquam. Donec consectetur 
-                        malesuada risus. Quisque eget elit erat. Proin pellentesque tellus 
-                        urna, vel pulvinar justo posuere eget. Fusce aliquam, nibh ac maximus 
-                        tempus, enim purus porta orci, sit amet condimentum dui nibh a quam. 
-                        Donec eget eros scelerisque nibh facilisis lobortis. Nulla placerat 
-                        luctus est, non porttitor urna porta et.`       
-        },
-        {
-            title: "Title test 4" ,       
-            date: `Published the ` + moment().format("Do MMMM YYYY"),
-            content: `Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer 
-                        porttitor ullamcorper convallis. Sed volutpat in turpis eu feugiat. 
-                        Vestibulum enim tellus, placerat ut ex vitae, luctus sollicitudin ex. 
-                        Nam hendrerit dui sed erat maximus imperdiet. Vestibulum quis gravida 
-                        lacus. Orci varius natoque penatibus et magnis dis parturient montes, 
-                        nascetur ridiculus mus. Sed eu massa turpis. Mauris ultrices ex ut 
-                        justo porta auctor. Nulla mollis ultrices aliquam. Donec consectetur 
-                        malesuada risus. Quisque eget elit erat. Proin pellentesque tellus 
-                        urna, vel pulvinar justo posuere eget. Fusce aliquam, nibh ac maximus 
-                        tempus, enim purus porta orci, sit amet condimentum dui nibh a quam. 
-                        Donec eget eros scelerisque nibh facilisis lobortis. Nulla placerat 
-                        luctus est, non porttitor urna porta et.`       
-        },
-        {
-            title: "Title test 5" ,       
-            date: `Published the ` + moment().format("Do MMMM YYYY"),
-            content: `Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer 
-                        porttitor ullamcorper convallis. Sed volutpat in turpis eu feugiat. 
-                        Vestibulum enim tellus, placerat ut ex vitae, luctus sollicitudin ex. 
-                        Nam hendrerit dui sed erat maximus imperdiet. Vestibulum quis gravida 
-                        lacus. Orci varius natoque penatibus et magnis dis parturient montes, 
-                        nascetur ridiculus mus. Sed eu massa turpis. Mauris ultrices ex ut 
-                        justo porta auctor. Nulla mollis ultrices aliquam. Donec consectetur 
-                        malesuada risus. Quisque eget elit erat. Proin pellentesque tellus 
-                        urna, vel pulvinar justo posuere eget. Fusce aliquam, nibh ac maximus 
-                        tempus, enim purus porta orci, sit amet condimentum dui nibh a quam. 
-                        Donec eget eros scelerisque nibh facilisis lobortis. Nulla placerat 
-                        luctus est, non porttitor urna porta et.`       
-        },
-        {
-            title: "Novedades de la guerra!!!" ,       
-            date: `Published the ` + moment().format("Do MMMM YYYY"),
-            content: `Bebesita al ataqueeeerrrr!.`       
-        }
-    ];    
-    console.log(posts);
-    
-    // Load simultaed posts on the DOM
-    createPostsTemplate(postsDom, posts);
+    // Simulated posts (Only if we are on index.html)
+    // if(window.location.href.indexOf('index') > -1){    
+        moment.locale('en-gb');     
+        posts = [
+            {
+                title: "Title test 1" ,       
+                date:  `Published the ` + moment().format("Do MMMM YYYY"),
+                content: `Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer 
+                            porttitor ullamcorper convallis. Sed volutpat in turpis eu feugiat. 
+                            Vestibulum enim tellus, placerat ut ex vitae, luctus sollicitudin ex. 
+                            Nam hendrerit dui sed erat maximus imperdiet. Vestibulum quis gravida 
+                            lacus. Orci varius natoque penatibus et magnis dis parturient montes, 
+                            nascetur ridiculus mus. Sed eu massa turpis. Mauris ultrices ex ut 
+                            justo porta auctor. Nulla mollis ultrices aliquam. Donec consectetur 
+                            malesuada risus. Quisque eget elit erat. Proin pellentesque tellus 
+                            urna, vel pulvinar justo posuere eget. Fusce aliquam, nibh ac maximus 
+                            tempus, enim purus porta orci, sit amet condimentum dui nibh a quam. 
+                            Donec eget eros scelerisque nibh facilisis lobortis. Nulla placerat 
+                            luctus est, non porttitor urna porta et.`       
+            },
+            {
+                title: "Title test 2" ,       
+                date: `Published the ` + moment().format("Do MMMM YYYY"),
+                content: `Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer 
+                            porttitor ullamcorper convallis. Sed volutpat in turpis eu feugiat. 
+                            Vestibulum enim tellus, placerat ut ex vitae, luctus sollicitudin ex. 
+                            Nam hendrerit dui sed erat maximus imperdiet. Vestibulum quis gravida 
+                            lacus. Orci varius natoque penatibus et magnis dis parturient montes, 
+                            nascetur ridiculus mus. Sed eu massa turpis. Mauris ultrices ex ut 
+                            justo porta auctor. Nulla mollis ultrices aliquam. Donec consectetur 
+                            malesuada risus. Quisque eget elit erat. Proin pellentesque tellus 
+                            urna, vel pulvinar justo posuere eget. Fusce aliquam, nibh ac maximus 
+                            tempus, enim purus porta orci, sit amet condimentum dui nibh a quam. 
+                            Donec eget eros scelerisque nibh facilisis lobortis. Nulla placerat 
+                            luctus est, non porttitor urna porta et.`       
+            },
+            {
+                title: "Title test 3" ,       
+                date: `Published the ` + moment().format("Do MMMM YYYY"),
+                content: `Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer 
+                            porttitor ullamcorper convallis. Sed volutpat in turpis eu feugiat. 
+                            Vestibulum enim tellus, placerat ut ex vitae, luctus sollicitudin ex. 
+                            Nam hendrerit dui sed erat maximus imperdiet. Vestibulum quis gravida 
+                            lacus. Orci varius natoque penatibus et magnis dis parturient montes, 
+                            nascetur ridiculus mus. Sed eu massa turpis. Mauris ultrices ex ut 
+                            justo porta auctor. Nulla mollis ultrices aliquam. Donec consectetur 
+                            malesuada risus. Quisque eget elit erat. Proin pellentesque tellus 
+                            urna, vel pulvinar justo posuere eget. Fusce aliquam, nibh ac maximus 
+                            tempus, enim purus porta orci, sit amet condimentum dui nibh a quam. 
+                            Donec eget eros scelerisque nibh facilisis lobortis. Nulla placerat 
+                            luctus est, non porttitor urna porta et.`       
+            },
+            {
+                title: "Title test 4" ,       
+                date: `Published the ` + moment().format("Do MMMM YYYY"),
+                content: `Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer 
+                            porttitor ullamcorper convallis. Sed volutpat in turpis eu feugiat. 
+                            Vestibulum enim tellus, placerat ut ex vitae, luctus sollicitudin ex. 
+                            Nam hendrerit dui sed erat maximus imperdiet. Vestibulum quis gravida 
+                            lacus. Orci varius natoque penatibus et magnis dis parturient montes, 
+                            nascetur ridiculus mus. Sed eu massa turpis. Mauris ultrices ex ut 
+                            justo porta auctor. Nulla mollis ultrices aliquam. Donec consectetur 
+                            malesuada risus. Quisque eget elit erat. Proin pellentesque tellus 
+                            urna, vel pulvinar justo posuere eget. Fusce aliquam, nibh ac maximus 
+                            tempus, enim purus porta orci, sit amet condimentum dui nibh a quam. 
+                            Donec eget eros scelerisque nibh facilisis lobortis. Nulla placerat 
+                            luctus est, non porttitor urna porta et.`       
+            },
+            {
+                title: "Title test 5" ,       
+                date: `Published the ` + moment().format("Do MMMM YYYY"),
+                content: `Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer 
+                            porttitor ullamcorper convallis. Sed volutpat in turpis eu feugiat. 
+                            Vestibulum enim tellus, placerat ut ex vitae, luctus sollicitudin ex. 
+                            Nam hendrerit dui sed erat maximus imperdiet. Vestibulum quis gravida 
+                            lacus. Orci varius natoque penatibus et magnis dis parturient montes, 
+                            nascetur ridiculus mus. Sed eu massa turpis. Mauris ultrices ex ut 
+                            justo porta auctor. Nulla mollis ultrices aliquam. Donec consectetur 
+                            malesuada risus. Quisque eget elit erat. Proin pellentesque tellus 
+                            urna, vel pulvinar justo posuere eget. Fusce aliquam, nibh ac maximus 
+                            tempus, enim purus porta orci, sit amet condimentum dui nibh a quam. 
+                            Donec eget eros scelerisque nibh facilisis lobortis. Nulla placerat 
+                            luctus est, non porttitor urna porta et.`       
+            },
+            {
+                title: "Novedades de la guerra!!!" ,       
+                date: `Published the ` + moment().format("Do MMMM YYYY"),
+                content: `Bebesita al ataqueeeerrrr!.`       
+            }
+        ];    
+        console.log(posts);
+        
+        // Load simulated posts on the DOM
+        createPostsTemplate(postsDom, posts);
+    // }
 
     // Themes Switching events    
     toGreenDiv.click(() => {
@@ -296,22 +300,23 @@ $(document).ready(() => {
         });
 
     // Close session event
-    logoutLink.click((e) => {
-        e.preventDefault();
+    if (logoutLink)
+        logoutLink.click((e) => {
+            e.preventDefault();
 
-        // Clean the user Data
-        userName = null;
-        userEmail = null;
-        userPassword = null;
+            // Clean the user Data
+            userName = null;
+            userEmail = null;
+            userPassword = null;
 
-        localStorage.removeItem("userName");
-        localStorage.removeItem("userEmail");
-        localStorage.removeItem("userPassword");                   
+            localStorage.removeItem("userName");
+            localStorage.removeItem("userEmail");
+            localStorage.removeItem("userPassword");                   
 
-        // Reload the page to show again the Log-in form
-        location.reload();
+            // Reload the page to show again the Log-in form
+            location.reload();
 
-        return false;
-    });
+            return false;
+        });
 
 });
