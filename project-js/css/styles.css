@@ -150,7 +150,9 @@ h2{
 
 form input[type="text"],
 form input[type="password"],
-form input[type="email"]{
+form input[type="email"],
+form input[type="number"],
+select{
     display: block;
     padding: 5px;
     border-radius: 2px;
@@ -252,4 +254,41 @@ footer{
     width: 30%;
     padding: 30px;
     margin: 0 auto;
+}
+
+#formContact{
+    width: 60%;
+    margin-top: 15px;
+    font-family: Helvetica, Arial;    
+}
+
+#formContact label{
+    display: block;
+    width: 100%;        
+    margin-top: 15px;
+}
+#formContact input[type="submit"]{
+    margin-top: 10px;
+    /* margin-bottom: 20px; */
+    /* display: block; */
+}
+
+.help-block{
+    float: right;
+    font-size: 11px;
+    background: red;
+    color: white;
+    padding: 7px;
+    width: 57%;
+    margin-top: 10px;
+    text-align: justify;
+}
+.alert-danger{    
+    font-size: 11px;
+    background: red;
+    color: white;
+    padding: 7px;
+    width: 100%;
+    margin-top: 10px;
+    text-align: justify;
 }

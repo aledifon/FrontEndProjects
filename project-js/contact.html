@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <title>JS Project</title>                   
+
+        <!-- CSS Styles -->
+        <link rel="stylesheet" type="text/css" href="css/styles.css"/>
+        <link id="theme" rel="stylesheet" type="text/css" href="css/green.css">        
+
+        <!-- jQuery -->
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>                    
+        
+        <!--jQuery UI -->
+        <link rel="stylesheet" href="js/jquery-ui-1.14.2/jquery-ui.min.css"/>
+        <link rel="stylesheet" href="js/jquery-ui-1.14.2/jquery-ui.structure.min.css"/>
+        <link rel="stylesheet" href="js/jquery-ui-1.14.2/jquery-ui.theme.min.css"/>
+        <script type="text/javascript" src="js/jquery-ui-1.14.2/jquery-ui.min.js"></script>
+
+        <!-- Plugin validation -->
+        <!-- <script type="text/javascript" src="js/jquery.form-validator.min.js"></script> -->
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-form-validator/2.3.26/jquery.form-validator.min.js"></script>
+        <!-- Modules plugin validation -->
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-form-validator/2.3.26/modules/security.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-form-validator/2.3.26/modules/date.min.js"></script>
+
+
+        <!-- My scripts-->
+        <script type="text/javascript" src="js/contact.js"></script>           
+    </head>
+    <body>     
+        <div id="selector-theme">
+            <div id="to-green"></div>
+            <div id="to-red"></div>
+            <div id="to-blue"></div>            
+        </div>
+
+        <!-- To clean floats and avoid superpossing -->
+        <div class="clearfix"></div>
+
+        <section id="global">
+
+            <!-- Header -->
+            <header>
+                <div id="logo">
+                   <h1>JS Project</h1>
+                </div>
+
+                <!-- To clean floats and avoid superpossing -->
+                <div class="clearfix"></div>
+
+                <nav id="menu">
+                    <ul>
+                        <li><a href="index.html">Home</a></li>                        
+                        <li><a href="clock.html">Clock</a></li>
+                        <li><a href="about.html">About me</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                    </ul>
+                </nav>                
+            </header>       
+           
+            <!-- Content -->
+            <section id="content">
+                <div id="box">
+                    <!-- Load form -->
+                     <h2>Contact</h2>
+
+                     <form action="" method="POST" id="formContact">
+                        <div id="errorContainer"></div>
+
+                        <label for="name">Name</label>
+                        <input type="text" name="name" data-validation="required alphanumeric"/>
+
+                        <label for="surname">Surname</label>
+                        <input type="text" name="surname" data-validation="required alphanumeric"/>
+
+                        <label for="email">Email</label>
+                        <input type="email" name="email" data-validation="required email"/>
+
+                        <label for="sex">Gender</label>
+                        <select name="sex" data-validation="required">
+                            <option value="">Select geneder</option>
+                            <option value="men">Man</option>
+                            <option value="Woman">Woman</option>
+                        </select>
+
+                        <label for="date">Birth date</label>
+                        <input type="text" name="date" data-validation="date" data-validation-format="dd-mm-yyyy"/>
+
+                        <label for="years">Age</label>
+                        <input type="number" name="years" data-validation="number"/>
+
+                        <input type="submit" value="Send"/>
+                     </form>
+                </div>
+               
+                <aside id="sidebar">
+                    <div id="about">
+                        <h4><span>Who am I?</span></h4>
+                        <img src="img/caracol.jpg" alt="About me" class="aboutMe" width="200px" height="150px">
+                        <p>
+                            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer 
+                            porttitor ullamcorper convallis
+                        </p>
+                    </div>
+
+                    <div id="login">
+                        <h4>Log in</h4>
+                        <form action="">
+                            <label for="name">Name</label>
+                            <input type="text" name="name"/>
+
+                            <label for="email">E-mail</label>
+                            <input type="email" name="email"/>
+
+                            <label for="password">Password</label>
+                            <input type="password" name="password"/>
+
+                            <input type="submit" value="Log-in">
+                        </form>
+                    </div>
+                </aside>
+
+                <!-- To clean floats and avoid superpossing -->
+                <div class="clearfix"></div>
+            </section>
+
+        </section>
+
+        <footer>
+            JS Master of Alejandro Diaz &copy;            
+        </footer>       
+
+        <a href="#" class="goUp">
+            <img src="img/goUp.png" title="Go up"/>
+        </a>
+    </body>
+</html>
