@@ -250,7 +250,7 @@ footer{
     font-weight: bold;
     font-family: Helvetica, Arial;
     color: #333;
-    border: 5px dashed #333;
+    /* border: 5px dashed #333; */
     width: 30%;
     padding: 30px;
     margin: 0 auto;
