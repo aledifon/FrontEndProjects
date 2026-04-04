@@ -1,24 +1,37 @@
-"use strict";
-// Class (It should be called as the file)
+// Class ('implements ShirtBase' equivalent to ': ShirtBase' on C#)
 class Shirt {
-    // Methods
+    // Properties
+    color;
+    model;
+    brand;
+    size;
+    price;
+    // Methods 
     setColor(color) {
         this.color = color;
     }
     getColor() {
         return this.color;
     }
+    // Class Constructor
+    constructor(color, model, brand, size, price) {
+        this.color = color;
+        this.model = model;
+        this.brand = brand;
+        this.size = size;
+        this.price = price;
+    }
 }
-var shirt = new Shirt();
-shirt.setColor("red");
-shirt.model = "t-shirt";
-shirt.brand = "nike";
-shirt.size = "L";
-shirt.price = 10;
-var longShirt = new Shirt();
-longShirt.color = "bluee";
-longShirt.model = "long-shirt";
-longShirt.brand = "reebok";
-longShirt.size = "XL";
-longShirt.price = 30;
-console.log(longShirt);
+// Child class ('extend Shirt' equivalent to ': Shirt' on C#)
+export class Hoodie extends Shirt {
+    getModel() {
+        return this.model;
+    }
+}
+// var shirt = new Shirt('red','long sleeves','nike','L',14);
+// shirt.setColor("red");
+// // shirt.getColor();
+// var longShirt = new Shirt('blue','hoodie','reebok','M',30);
+// longShirt.setColor('blue');
+console.log('I am implementing an interface!');
+console.log('Hoodie Class inhertis from Shirt Class');

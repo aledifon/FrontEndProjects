@@ -1,8 +1,10 @@
 {
   "compilerOptions": {
-    "target": "es6",
-    "module": "es6",
-    "strict": true
+    "target": "ES2022",	
+    "module": "ESNext",	
+    "strict": true,
+	"moduleResolution": "bundler",
+    "esModuleInterop": true
   },
   "include": ["*.ts"]
 }
