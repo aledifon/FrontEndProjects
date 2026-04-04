@@ -15,7 +15,7 @@ function simpleStamp(target: Function) {
     // Add a method to the class prototype
     target.prototype.simpleStamping = function(): void {
         console.log("Stamped shirt (simple decorator)");
-    }
+    };
 }
 
 // Apply the simple decorator
@@ -41,8 +41,8 @@ function stamp(logo:string){
         // All instances of the class will now have this method
         target.prototype.stamping = function():void{
             console.log("Stamped shirt with the logo: " + logo);
-        }
-    }
+        };
+    };
 }
 
 // Class ('implements ShirtBase' equivalent to ': ShirtBase' on C#)
@@ -82,14 +82,14 @@ export class Hoodie extends Shirt{
 }
 
 // decoratorName → name of the decorator used with @decoratorName
-// target → the class being decorated (constructor)
+// target → the class being decorated (constructor) (Important: classes are functions in JS!)
 // target.prototype → used to add methods to all instances
 // methodName → method added dynamically to the class
 
 // function decoratorName(target: Function) {
 //     target.prototype.methodName = function(): void {
 //         // code executed when method is called
-//     }
+//     };
 // }
 
 // var shirt = new Shirt('red','long sleeves','nike','L',14);
