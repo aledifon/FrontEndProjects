@@ -3,6 +3,17 @@
 <p>of {{Brand}} brand</p>
 <strong>{{Price}}€</strong>
 
-<app-user></app-user>
-<app-film></app-film>
-<app-sellings></app-sellings>
+<br>
+<button (click)="changeName()">Change product name</button>
+<br>
+<br>
+
+@if(showFilms == true){
+    <button (click)="hideFilms(false)">Hide films component</button>
+} @else{
+    <button (click)="hideFilms(true)">Show films component</button>
+}
+
+@if(showFilms == true){
+    <app-film></app-film>
+}
