@@ -1,1 +1,109 @@
-<p>user works!</p>
+<hr>
+<h1>Flow control structures in Angular templates</h1>
+
+<h2>If-Else conditionals</h2>
+<p>{{web}}</p>
+<a [href]="web" 
+    [class.exist] = "redirect"
+    target="_blank">Go to my web</a>    
+<br><br>
+
+@if (redirect){
+    <p>The link to {{web}} is correct</p>
+}
+@else{
+    <p>The link to {{web}} is wrong!</p>
+}
+<button (click)="toogleValue()">Update link</button>
+
+<br><br>
+<h2>For loop</h2>
+<h3>Paddle brands</h3>
+<ul>
+    @for (brand of paddleBrand; track brand.id; 
+        let index = $index, count = $count, 
+        even = $even, odd = $odd ) {
+
+        <li> {{brand.name}} {{odd}} </li>
+    } @empty {
+        <li>The list is completely empty</li>
+    }
+</ul>
+<button (click)="toogleFor()">
+    @if (paddleBrand.length === 0){
+        Show list
+    }    
+    @else{
+        Clear list
+    }
+</button>
+
+<!--  
+@if (user.rol == "admin"){
+    <app-sellings></app-sellings>
+}
+-->
+
+<h2>Switch contitional</h2>
+@switch (user.rol) {
+    @case ("admin") {
+        <app-sellings></app-sellings>
+    }
+    @case ("user") {
+        <p>You are a normal user</p>
+    }
+    @default {
+        <p>You are a guest user</p>
+    }
+}
+<button (click)="toogleSwitch()">
+    @if (user.rol == "admin"){
+        Set user rol
+    }    
+    @else if (user.rol == "user"){
+        Set guest rol
+    }
+    @else {
+        Set admin rol
+    }
+</button>
+
+<h2>ng-container</h2>
+<!-- ng-container tag lets you group elements but is not a real DOM elem -->
+<ng-container>
+    <h4>This is on an Angular container</h4>
+</ng-container>
+
+<h2>Variables</h2>
+<!-- Vars creations -->
+@let country = "Spain";
+@let greetings = "Greetings from " + country;
+{{greetings}}
+<br><br>
+
+<!--  @defer: Lazy-loads content to reduce initial DOM load and avoid unnecessary requests -->
+<!-- 
+<hr>
+<h1>Defer loading</h1>
+@defer{
+    <product></product>
+} @placeholder {
+    <h1>The 'product' component is loading</h1>
+}
+ -->
+
+ <!-- Pipe application -> [{{value | pipeType: param1:param2:...paramN}}] -->
+<h2>Angular Pipes</h2>
+<h4>Custom pipe</h4>
+{{"Hola pepe hoy estas muy incisivo e insistente?" | changeLetters }}
+<h4>Date pipe</h4>
+{{date | date: "fullDate"}}
+<br>
+{{date | date: "dd/MM/yyyy"}}
+<br><br>
+<h4>Upercase pipe</h4>
+{{web | uppercase}}
+<h4>Lowercase pipe</h4>
+{{web | lowercase}}
+<h4>Titlecase pipe</h4>
+{{web | titlecase}}

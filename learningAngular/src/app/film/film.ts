@@ -8,10 +8,12 @@ import { Component } from '@angular/core';
 })
 export class Film {
 
+  // Runs once after Angular has initialized all the component's inputs.
   ngOnInit(){
     console.log("The film component is running!!");
   }
 
+  // Runs once before the component is destroyed.
   ngOnDestroy(){
     console.log("The film component has been destroyed!!");
   }
