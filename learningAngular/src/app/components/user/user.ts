@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { UpperCasePipe, LowerCasePipe, DatePipe, TitleCasePipe } from '@angular/common';
-import { ChangeLettersPipe } from '../pipes/changeLetters.pipe';
+import { ChangeLettersPipe } from '../../pipes/changeLetters.pipe';
 import { Sellings } from '../sellings/sellings';
 import { ProductComponent } from "../product/product.component";
 import { dateTimestampProvider } from 'rxjs/internal/scheduler/dateTimestampProvider';

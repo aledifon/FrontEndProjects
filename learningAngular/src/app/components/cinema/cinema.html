@@ -1,0 +1,42 @@
+<hr/>
+
+<h1>{{title}}</h1>
+
+<p>
+    Choose the color:
+    <input type="color" [(ngModel)]="myColor"/>
+</p>
+
+<ul>
+    @for (film of films; track film.id; let _index = $index) {
+        <li> {{film.title}} - 
+            <span [ngStyle]= "{'background-color' : myColor}" > 
+                {{film.gender}}
+            </span>- 
+            {{film.platform}} </li>
+
+            <button (click)="deleteFilm(_index)">Delete</button>
+    }
+</ul>
+
+<hr/>
+<h1>Form and two way data binding in Angular</h1>
+
+<input type="text" [(ngModel)]="myFilm" 
+                    (focus)="focusing()"
+                    (blur)="focusingOut()"
+                    (keyup)="pressingKeys($event)"/>
+<button (click)="showFilm()">Show film</button>
+<button (click)="addFilm()">Add new film</button>
+
+<p>
+    My film is: 
+<strong>{{myFilm}}</strong>
+</p>
+
+<h3>Simple Films list</h3>
+<ul>
+    @for (film of filmsWoData; track film) {
+        <li> {{film}} </li>
+    }
+</ul>

@@ -1,0 +1,47 @@
+<h1>Directives in Angular</h1>
+
+<!-- Directives used through Component selector -->
+<!-- <app-film></app-film> -->
+
+<!-- Structurals Directives: NgIf,Ngfor,etc... 
+ now replaced by @if, @for, @switch, etc...  -->
+
+<!-- Attributes Directives: -->
+<!-- Set a css class through the attribute ngClass -->
+<h2>ngClass Sample</h2>
+<!-- <h2 [ngClass]="show == 'yes' ? 'highlight' : 'unhighlight'">I am Alejandro Diaz</h2> -->
+<h3 [ngClass]="paint ? 'highlight' : 'unhighlight'">I am Alejandro Diaz</h3>
+<button (click)="tooglePaint()">
+    @if(this.paint){
+        Set the unhighlight class
+    }
+    @else {
+        Set the highlight class
+    }
+</button>
+
+<!-- Set one (or more) css rule/style through the attribute ngStyle -->
+<h2>ngStyle Sample</h2>
+<h3 [ngStyle] = "show == 'yes' ? 
+            {'background-color' : 'yellow'} : 
+            {'background-color' : 'gray'}">Switch my background color</h3>
+<button (click)="toogleBackgroundColor()">
+    @if(this.show == 'yes'){
+        Set gray color
+    }
+    @else {
+        Set yellow color
+    }
+</button>
+
+<!-- <p [ngStyle]="{
+    'background-color' : 'blue',
+    'color' : 'white',
+    'font-size' : '20px',
+    'border-radius' : '40px',
+    'padding' : '10px'
+
+}"> -->
+<p [ngStyle]="myStyles">
+Test paragraph
+</p>
