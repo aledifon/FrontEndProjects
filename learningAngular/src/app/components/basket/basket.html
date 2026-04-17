@@ -1,15 +1,31 @@
 <h1>Shopping basket</h1>
 
 <div>
-    <p>Basket products: PRODUCTS AMOUNT</p>
-    <P>Total on the basket: TOTAL ON THE BASKET</P>
+    <p>
+        Change store name:
+    </p>    
+    <input type="text" [(ngModel)]="storeName"/>
+    <h3>{{storeName}}</h3>
 
-    <button>Add product</button>
-    <button>Add 5 products</button>
-    <button>Apply coupon 5%</button>
-    <button>Empty cart</button>
+    <p>Basket products: {{productsAmount}}</p>
+    <P>Total on the basket: {{totalBasket}}€</P>
+
+    <button (click)="addProduct()">Add product</button>
+    <button (click)="add5Products()">Add 5 products</button>
+    <button (click)="applyCoupon()">
+        @if (this.discountApplied == 0){
+            Apply coupon 20%
+        }
+        @else{
+            Remove coupon 20%
+        }        
+    </button>
+    <button (click)="deleteProduct()">Delete 1 product</button>
+    <button (click)="emptyBasket()">Empty cart</button>
 </div>
 
-<div>
-    <p>Show notification message</p>
+@if (notification){
+<div class="notification">    
+    <p>{{notification}}</p>    
 </div>
+}
