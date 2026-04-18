@@ -7,7 +7,7 @@ import { dateTimestampProvider } from 'rxjs/internal/scheduler/dateTimestampProv
 
 @Component({
   selector: 'app-user',
-  imports: [Sellings, ProductComponent, 
+  imports: [Sellings,  
           UpperCasePipe, LowerCasePipe, 
           DatePipe, TitleCasePipe,
           ChangeLettersPipe],

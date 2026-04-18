@@ -1,0 +1,60 @@
+<h1>Shopping basket</h1>
+
+<div>
+    <p>
+        Change store name:
+    </p>    
+    <!-- $any() tells TypeScript to ignore type checking for this expression
+     (disables strict typing so JS runtime behavior is used instead).
+    -->    
+    <input type="text" (input)="storeName.set($any($event.target).value)"/>
+    <h3>{{storeName()}}</h3>
+
+    <p>Basket products: {{productsAmount()}}</p>
+    <P>Total on the basket: {{totalBasketFinal()}}€</P>
+
+    <button (click)="addProduct()">Add product</button>
+    <button (click)="add5Products()">Add 5 products</button>
+    <button (click)="applyCoupon()">
+        @if (this.discountApplied() == 0){
+            Apply coupon 20%
+        }
+        @else{
+            Remove coupon 20%
+        }        
+    </button>
+    <button (click)="deleteProduct()">Delete 1 product</button>
+    <button (click)="emptyBasket()">Empty cart</button>
+</div>
+
+@if (notification()){
+<div class="notification">    
+    <p>{{notification()}}</p>    
+</div>
+}
+
+
+
+<!-- Two-way sync manual:
+    [value] = Angular -> input (updates view when signal changes)
+    (input) = input -> Angular (updates signal when user types)
+
+    NOTE:
+    (input) receives the DOM event ($event).
+    $event.target refers to the HTMLInputElement that triggered the event
+    (the <input> element itself).
+
+    .value is always a string and usually needs conversion
+    (e.g. +value or Number(value)) before updating a signal. -->
+<!--
+
+<h1>Signal sample</h1>
+<h3>Counter: {{counter()}} </h3>
+<h3>Counter X3: {{counterX3()}} </h3>
+
+<input type="number" 
+        [value]="increment()"
+        (input)="increment.set(+($event.target.value))" />
+
+<button (click)="increase()">Increase</button>
+-->

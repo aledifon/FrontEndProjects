@@ -4,7 +4,7 @@ import { NgClass, NgStyle } from '@angular/common';
 
 @Component({
   selector: 'app-sellings',
-  imports: [Film, NgClass, NgStyle],
+  imports: [NgClass, NgStyle],
   templateUrl: './sellings.html',
   styleUrl: './sellings.scss',
 })

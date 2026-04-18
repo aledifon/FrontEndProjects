@@ -5,12 +5,13 @@ import { Component, signal } from '@angular/core';
 // import { User } from './user/user';
 import { config } from './models/config'; 
 // import { Cinema } from './components/cinema/cinema';
-import { Basket } from './components/basket/basket';
+// import { Basket } from './components/basket/basket';
+import { BasketSignals } from './components/basket-signals/basket-signals';
 
 
 @Component({
   selector: 'app-root',                       /* Component selector (HTML tag) */
-  imports: [Basket],  /* Standalone dependencies for this component */
+  imports: [BasketSignals],  /* Standalone dependencies for this component */
   templateUrl: './app.html',                  /* Component template (view) */
   styleUrl: './app.scss'                      /* Component scoped styles */
 })
