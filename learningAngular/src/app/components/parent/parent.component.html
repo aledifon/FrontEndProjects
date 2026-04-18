@@ -1,0 +1,41 @@
+<hr>
+
+<h1>I am the parent component!</h1>
+<p>I am a component that contains another component which is my child</p>
+
+<p>I introduce you to my child</p>
+
+{{greetReceived}}
+
+<!-- Data sent to the child component through 'myParentName' binding/attribute -->
+<app-child 
+    [myParentName]="parentName"
+    (greetChild)="ReceiveGreetings($event)"    
+></app-child>
+
+<!--
+HTML + Angular template syntax overview:
+
+Standard HTML attributes:
+[id]      -> element identifier
+[class]   -> CSS classes
+
+Angular bindings:
+
+[property]   -> property binding (TS → DOM)
+(event)       -> event binding (DOM → TS)
+[(ngModel)]   -> two-way binding (TS ↔ DOM)
+
+Structural directives:
+*ngIf         -> conditional rendering (show/hide element)
+*ngFor        -> loop rendering (iterate lists)
+
+Attribute/Style directives:
+[ngClass]     -> dynamic CSS classes
+[ngStyle]     -> dynamic inline styles
+
+Ex.:
+<section id="" class="" [withBinding]="" (event)="" [(combined)]="" *ngIf *ngFor [ngClass]="">
+    content
+</section>
+-->

@@ -4,14 +4,16 @@ import { Component, signal } from '@angular/core';
 // import { ProductComponent } from './product/product.component';
 // import { User } from './user/user';
 import { config } from './models/config'; 
+import { ParentComponent } from './components/parent/parent.component';
 // import { Cinema } from './components/cinema/cinema';
 // import { Basket } from './components/basket/basket';
-import { BasketSignals } from './components/basket-signals/basket-signals';
+// import { BasketSignals } from './components/basket-signals/basket-signals';
+
 
 
 @Component({
   selector: 'app-root',                       /* Component selector (HTML tag) */
-  imports: [BasketSignals],  /* Standalone dependencies for this component */
+  imports: [ParentComponent],  /* Standalone dependencies for this component */
   templateUrl: './app.html',                  /* Component template (view) */
   styleUrl: './app.scss'                      /* Component scoped styles */
 })
