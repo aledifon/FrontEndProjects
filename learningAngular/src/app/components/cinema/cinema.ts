@@ -2,10 +2,15 @@ import { Component } from '@angular/core';
 import { Film } from '../../models/film';
 import { FormsModule } from '@angular/forms';
 import { NgStyle } from '@angular/common';
+import { FilmService } from '../../services/film.service';
 
 @Component({
   selector: 'app-cinema',
   imports: [FormsModule, NgStyle],
+  // providers: [FilmService],        // Registers FilmService at component level if 
+                                      // it is not provided via 'providedIn'.
+                                      // This creates a new instance of the service 
+                                      // scoped to this component.
   templateUrl: './cinema.html',
   styleUrl: './cinema.scss',
 })
@@ -18,29 +23,28 @@ export class Cinema {
   public myFilm: string = "";
   public filmsWoData: string[] = [];
 
-  public myColor: string = "#FFFFFF"
+  public myColor: string = "#ffffff"
+  
+  constructor(private filmService: FilmService){
+    // Angular injects FilmService via the DI container (constructor injection) .
+    // The 'private' modifier creates and assigns a class property automatically.
+    // This keeps the service internal to the component (not accessible from the template),
+    // which is a common practice to enforce encapsulation of business logic.
 
-  constructor(){
     this.title = "Models";
 
-    this.films = [
-      new Film(1, "El padrino","Mafia","Copola",1976,"Prime",false),
-      new Film(2, "Pepe","Mafia","Copola",1976,"Prime",false),
-      new Film(3, "BB","Mafia","Copola",1976,"Prime",false),
-      new Film(4, "CC","Mafia","Copola",1976,"Prime",false),
-      new Film(5, "DD","Mafia","Copola",1976,"Prime",false),
-      new Film(6, "EE","Mafia","Copola",1976,"Prime",false),
-      new Film(7, "FF","Mafia","Copola",1976,"Prime",false),
-      new Film(8, "GG","Mafia","Copola",1976,"Prime",false),
-      new Film(9, "HH","Mafia","Copola",1976,"Prime",false),
-      new Film(10, "II","Mafia","Copola",1976,"Prime",false)      
-    ];
+    // Fill the films array using the FilmService
+    this.films = filmService.films;                 // via getter
+    // this.films = filmService.getFilms();         // via method
   }
 
   ngOnInit(){
     console.log(this.films);
 
-    this.films[1].title = "Pepe el vaquero";
+    this.films[1].title = "Pepe el vaquero";    
+
+    // Example call to injected service
+    this.filmService.greetingsService();
   }
 
   // ngDoCheck(){

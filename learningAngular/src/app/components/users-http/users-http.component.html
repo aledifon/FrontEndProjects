@@ -1,0 +1,48 @@
+<h1>HTTP Request by POST</h1>
+
+<button (click)="savePost()">Create test User</button>
+
+<hr>
+
+<h1>Search specific user</h1>
+
+<!-- <button (click)="loadData()">Load</button> -->
+<br>
+<input type="text" [(ngModel)]="userId" (keyup)="searchUser()"/>
+
+<p>User data</p>
+<strong>Name</strong> = {{userIndividual?.name}} 
+<br>
+<strong>email</strong> = {{userIndividual?.email}}
+<br>
+<strong>City</strong> = {{userIndividual?.address?.city}}
+<br>
+<strong>Web</strong> = {{userIndividual?.website}}
+<br><br>
+
+<hr>
+
+<h1>User List</h1>
+<ul>
+    @for (user of userList; track user.id;) {
+        <li [ngStyle]="{'list-style': 'none'}">
+            <strong>Name</strong> = {{user.name}}, 
+            <br>
+            <strong>email</strong> = {{user.email}}, 
+            <br>
+            <strong>City</strong> = {{user.address.city}}
+            <br>
+            <strong>Web</strong> = {{user.website}}
+            <br><br>
+            <!-- <strong>id</strong> = {{user.id}}, 
+            <br>
+            <strong>userId</strong> = {{user.userId}}, 
+            <br>
+            <strong>title</strong> = {{user.title}}, 
+            <br>
+            <strong>body</strong> = {{user.body}}            
+            <br><br> -->
+        </li>
+    }
+    
+</ul>

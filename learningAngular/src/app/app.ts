@@ -4,8 +4,10 @@ import { Component, signal } from '@angular/core';
 // import { ProductComponent } from './product/product.component';
 // import { User } from './user/user';
 import { config } from './models/config'; 
-import { ParentComponent } from './components/parent/parent.component';
+// import { ParentComponent } from './components/parent/parent.component';
 // import { Cinema } from './components/cinema/cinema';
+// import { UsersHTTPComponent } from './components/users-http/users-http.component';
+import { RouterLink, RouterOutlet, RouterLinkActive } from '@angular/router';
 // import { Basket } from './components/basket/basket';
 // import { BasketSignals } from './components/basket-signals/basket-signals';
 
@@ -13,7 +15,7 @@ import { ParentComponent } from './components/parent/parent.component';
 
 @Component({
   selector: 'app-root',                       /* Component selector (HTML tag) */
-  imports: [ParentComponent],  /* Standalone dependencies for this component */
+  imports: [RouterOutlet, RouterLink, RouterLinkActive],  /* Standalone dependencies for this component */
   templateUrl: './app.html',                  /* Component template (view) */
   styleUrl: './app.scss'                      /* Component scoped styles */
 })
