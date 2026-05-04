@@ -1,0 +1,70 @@
+<h2>Angular forms</h2>
+<p>How to work with simple forms in Angular</p>
+
+<form (ngSubmit)="onSubmit()" #form="ngForm">
+    <p>
+        <label for="name">Name:</label><br>
+        <input type="text" id="name" name="name" [(ngModel)]="name" 
+        required minlength="3" maxlength="40"
+        #nameField="ngModel"/>
+
+        @if(nameField.invalid && nameField.touched){
+            <div class="invalid">
+                The name is wrong, write it again.
+
+                @if(nameField.errors?.['required']){
+                    <span>Fill the name</span>
+                }                
+
+                @if(nameField.errors?.['minlength']){
+                    <span>Your name is too short</span>
+                }                
+
+                @if(nameField.errors?.['maxlength']){
+                    <span>Your name is too long</span>
+                }                
+            </div>
+        }
+    </p>
+
+    <p>
+        <label for="email">Email:</label><br>
+        <input type="email" id="email" name="email" [(ngModel)]="email" 
+        required email
+        #emailField="ngModel"/>
+
+        @if(emailField.invalid && emailField.touched){
+            <div class="invalid">
+                The email is wrong, write it again.              
+            </div>
+        }
+    </p>
+
+    <p>
+        <label for="age">Age:</label><br>
+        <input type="number" id="age" name="age" [(ngModel)]="age" 
+        min="18" max="100"
+        
+        #ageField="ngModel"/>
+
+        @if(ageField.invalid && ageField.touched){
+            <div class="invalid">
+                The age is wrong, write it again.              
+            </div>
+        }
+    </p>
+
+    <p>
+        <label for="password">Password:</label><br>
+        <input type="password" id="password" name="password" [(ngModel)]="password" 
+        required minlength="7"/>
+    </p>
+
+    <button type="submit" [disabled]="!form.valid">Send</button>
+
+</form>
+
+<hr>
+
+<p>Name: {{name}}</p>
+<p>Email: {{email}}</p>
