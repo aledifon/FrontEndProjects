@@ -1,0 +1,79 @@
+<h2>Reactive forms in Angular</h2>
+
+<form [formGroup]="form" (ngSubmit)="onSubmit()">
+    <div class="field">
+        <label for="name">Name:</label>
+        <input type="text" id="name" formControlName="name" />
+
+        <div *ngIf="form.get('name')?.invalid && form.get('name')?.touched">
+            <span *ngIf="form.get('name')?.errors?.['required']">
+                The name is required
+            </span>
+
+            <span *ngIf="form.get('name')?.errors?.['minlength']">
+                The name is too short
+            </span>
+
+            <span *ngIf="form.get('name')?.errors?.['maxlength']">
+                The name is too long
+            </span>
+        </div>
+    </div>    
+
+    <br>
+
+    <div class="field">
+        <label for="email">E-mail:</label>
+        <input type="email" id="email" formControlName="email" />
+
+        <div *ngIf="form.get('email')?.invalid && form.get('email')?.touched">
+            <span *ngIf="form.get('email')?.errors?.['required']">
+                The email is required
+            </span>
+
+            <span *ngIf="form.get('email')?.errors?.['email']">
+                The email is wrong
+            </span>
+        </div>
+    </div>
+
+    <br>
+
+    <div class="field">
+        <label for="age">Age:</label>
+        <input type="number" id="age" formControlName="age" />
+
+        <div *ngIf="form.get('age')?.invalid && form.get('age')?.touched">
+            <span *ngIf="form.get('age')?.errors?.['required']">
+                The age is required
+            </span>
+
+            <span *ngIf="form.get('age')?.errors?.['min']">
+                The minimum age is 18
+            </span>
+        </div>
+    </div>
+
+    <br>
+
+    <div class="field">
+        <label for="password">Password:</label>
+        <input type="password" id="password" formControlName="password" />
+
+        <div *ngIf="form.get('pasword')?.invalid && form.get('pasword')?.touched">
+            <span *ngIf="form.get('pasword')?.errors?.['required']">
+                The pasword is required
+            </span>
+
+            <span *ngIf="form.get('pasword')?.errors?.['minLength']">
+                The pasword is too short
+            </span>
+        </div>
+    </div>
+
+    <br>
+
+    <button type="submit" [disabled]="form.invalid">
+        Send message
+    </button>
+</form>

@@ -10,6 +10,7 @@ import { Film } from './components/film/film';
 import { UsersHTTPComponent } from './components/users-http/users-http.component';
 import { Page404Component } from './components/page404/page404.component';
 import { FormsComponent } from './components/forms/forms.component';
+import { ReactiveFormsComponent } from './components/reactive-forms/reactive-forms.component';
 
 export const routes: Routes = [
     {path: "", component: ProductComponent},
@@ -25,6 +26,7 @@ export const routes: Routes = [
     {path: "services/:id", component: UsersHTTPComponent},  // Sending params on the route
     {path: "services", component: UsersHTTPComponent},
     {path: "forms", component: FormsComponent},
+    {path: "reactive-forms", component: ReactiveFormsComponent},
     {path: "**", component: Page404Component}           // Default route in case of typing 
                                                         // an invalid route
 ];
