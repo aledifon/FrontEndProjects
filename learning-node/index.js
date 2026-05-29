@@ -22,8 +22,11 @@ app.use(express.json());
 app.use(express.urlencoded({extended: true}));
 
 // Load application routes here
-// Create test endpoints here
+const projectRoutes = require("./routes/project");
 
+app.use('/api/project', projectRoutes);
+
+// Create test endpoints here
 app.get("/", (req, res) => {
     console.log("The root route has been called!");
 
