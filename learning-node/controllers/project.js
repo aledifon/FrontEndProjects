@@ -75,10 +75,73 @@ const list = (req, res) => {
         });
 };
 
-const item =
+// Get project (Read) method
+const item = (req, res) => {
+
+    let id = req.params.id;
+
+    // console.log(id);
+
+    Project.findById(id)
+        .then(project => {
+
+            if(!project)
+                return res.status(404).send({
+                    status: "error",
+                    message: "Project with id = " + id + " not found"
+                });
+
+            return res.status(200).send({
+               status: "success",
+               project
+            });
+        })
+        .catch(error => {
+
+            return res.status(500).send({
+                status: "error",
+                message: "Error at getting the project with id = " + id ,
+                error
+            });
+        });
+}
+
+// Delete project (Delete) method
+const deleteProject = (req, res) => {
+
+    let id = req.params.id;
+
+    // console.log(id);
+    
+    Project.findByIdAndDelete(id)
+        // .deleteOne()
+        .then(project => {
+
+            if(!project)
+                return res.status(404).send({
+                    status: "error",
+                    message: "Project with id = " + id + " was not deleted!"
+                });
+
+            return res.status(200).send({
+               status: "success",
+               project
+            });
+        })
+        .catch(error => {
+
+            return res.status(500).send({
+                status: "error",
+                message: "Error at deleting the project with id = " + id ,
+                error
+            });
+        });
+}
 
 // Export the different controllers
 module.exports = {
     save,
-    list
+    list,
+    item,
+    deleteProject
 };
