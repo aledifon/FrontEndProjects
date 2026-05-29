@@ -156,7 +156,7 @@ const update = (req, res) => {
             if(!projectUpdate)
                 return res.status(404).send({
                     status: "error",
-                    message: "Project with id = " + id + " was not found!"
+                    message: "Project with id = " + body.id + " was not found!"
                 });
 
             return res.status(200).send({
@@ -168,7 +168,7 @@ const update = (req, res) => {
 
             return res.status(500).send({
                 status: "error",
-                message: "Error at updating the project with id = " + id ,
+                message: "Error at updating the project with id = " + body.id ,
                 error
             });
         });
