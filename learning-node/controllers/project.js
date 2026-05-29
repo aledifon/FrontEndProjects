@@ -1,7 +1,7 @@
 // Import the project model
 const Project = require("../models/project");
 
-// Save (Create) method
+// Save method
 const save = (req, res) => {
 
     // Receive the data
@@ -46,7 +46,7 @@ const save = (req, res) => {
         });
 };
 
-// List (Read) method
+// List method
 const list = (req, res) => {
     Project.find()
         .then(projects => {
@@ -75,7 +75,7 @@ const list = (req, res) => {
         });
 };
 
-// Get project (Read) method
+// Get project method
 const item = (req, res) => {
 
     let id = req.params.id;
@@ -106,7 +106,7 @@ const item = (req, res) => {
         });
 }
 
-// Delete project (Delete) method
+// Delete project method
 const deleteProject = (req, res) => {
 
     let id = req.params.id;
@@ -138,10 +138,47 @@ const deleteProject = (req, res) => {
         });
 }
 
+// Udpate project method
+const update = (req, res) => {
+
+    let body = req.body;
+
+    if(!body || !body.id){
+        return res.status(404).send({
+            status: "error",
+            message: "You sent nothing"
+        });
+    }
+
+    Project.findByIdAndUpdate(body.id, body, {new: true})        
+        .then(projectUpdate => {
+
+            if(!projectUpdate)
+                return res.status(404).send({
+                    status: "error",
+                    message: "Project with id = " + id + " was not found!"
+                });
+
+            return res.status(200).send({
+               status: "success",
+               projectUpdate
+            });
+        })
+        .catch(error => {
+
+            return res.status(500).send({
+                status: "error",
+                message: "Error at updating the project with id = " + id ,
+                error
+            });
+        });
+}
+
 // Export the different controllers
 module.exports = {
     save,
     list,
     item,
-    deleteProject
+    deleteProject,
+    update
 };

@@ -10,6 +10,7 @@ router.post("/save", ProjectController.save);
 router.get("/list", ProjectController.list);
 router.get("/item/:id", ProjectController.item);
 router.delete("/delete/:id", ProjectController.deleteProject);
+router.put("/update", ProjectController.update);
 
 // Export the routes
 module.exports = router;
