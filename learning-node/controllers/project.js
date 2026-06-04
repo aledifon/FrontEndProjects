@@ -1,3 +1,8 @@
+
+// Import file system & path modules
+const fs = require("fs");
+const path = require ("path");
+
 // Import the project model
 const Project = require("../models/project");
 
@@ -174,11 +179,108 @@ const update = (req, res) => {
         });
 }
 
+// Upload files method
+const upload = (req, res) => {
+    
+    let id = req.params.id;
+
+    if(!req.file){
+        return res.status(404).json({
+            status: "error",
+            message: "Nothing was uploaded"
+        });
+    }
+
+    const filePath = req.file.path;
+    const extension = path.extname(req.file.originalname).toLocaleLowerCase().replace(".","");
+
+    const validExtensions = ["png", "jpg", "jpeg", "gif"];
+
+    if(!validExtensions.includes(extension)){
+
+        fs.unlinkSync(filePath);
+
+        return res.status(400).json({
+            status: "error",
+            message: "Invalid file extension"
+        })
+    }
+
+    Project.findByIdAndUpdate({_id: id}, {image: req.file.filename}, {new: false})        
+        .then(projectUpdate => {
+
+            if(!projectUpdate){
+
+                fs.unlinkSync(filePath);
+
+                return res.status(404).send({
+                    status: "error",
+                    message: "Project with id = " + body.id + " was not found!"
+                });
+            }
+
+            if(projectUpdate.image && projectUpdate.image != "default.png"){
+                const oldImagePath = "./uploads/images/" + projectUpdate.image;
+
+                if(fs.existsSync(oldImagePath)){
+                    fs.unlinkSync(oldImagePath);
+                }
+            }
+
+            return res.status(200).send({
+               status: "success",
+               project: projectUpdate,
+               newFile: req.file.filename
+            });
+
+        })
+        .catch(error => {
+
+            fs.unlinkSync(filePath);
+
+            return res.status(500).send({
+                status: "error",
+                message: "Error at updating the project with id = " + body.id ,
+                error
+            });
+        });
+}
+
+const getImage = (req, res) => {
+    // Get the file name
+    let file = req.params.file;
+
+    // Build the file route
+    let filePath = "./uploads/images/" + file;
+
+    // Check if the file exists
+    fs.stat(filePath, (error, exist) => {
+
+        if(!error && exist){
+
+            // Return a response
+            return res.sendFile(path.resolve(filePath));
+
+        }
+        else{
+
+            // Return a response
+            return res.status(404).json({        
+                status: "error",            
+                message: "The image does not exists"
+            });
+        }
+    });
+
+}
+
 // Export the different controllers
 module.exports = {
     save,
     list,
     item,
     deleteProject,
-    update
+    update,
+    upload,
+    getImage
 };
